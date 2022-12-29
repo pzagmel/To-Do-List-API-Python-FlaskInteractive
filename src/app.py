@@ -16,7 +16,10 @@ def hello_world():
 def add_new_todo():
     request_body = request.data   
     decoded_object = json.loads(request_body)
+    #info que traigo (request.data) lo guardo como request_body
+    #pero está en formato jason, fx me ayudará a leerlo como py.
     #leo de formato js a python con esta fx load, y se almacena en decoded objet.
+    
     todos.append(decoded_object)
     print("Incoming request with the following body", request_body)
     return jsonify(todos)
